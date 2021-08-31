@@ -1,19 +1,6 @@
 const estados = [];
 const modalWrapper = document.querySelector(".modal-wrapper")
 
-const fetchSvg = (image) => {
-    fetch(image.src)
-        .then((response) => response.text())
-        .then((response) => {
-            const span = document.createElement('span');
-            span.innerHTML = response;
-            const inlineSvg = span.getElementsByTagName('svg')[0];
-            image.parentNode.replaceChild(inlineSvg, image);
-            return true;
-        })
-        .then(() => { getActions(); });
-};
-
 const getActions = () => {
     const states = document.getElementsByClassName('estado');
     for(let i = 0; i < states.length; i++) {
